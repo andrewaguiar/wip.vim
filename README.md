@@ -36,7 +36,19 @@ As long as you are inside a git repository you can run:
 :WIP
 ```
 
-Wip will create a text file (based on the "git current repo @ git current branch" md5) in `$HOME/.wip` and open this file
+Wip will create a text file (based on the "git current repo @ git current branch" md5) in `$HOME/.wip.vim` and open this file
 using `vim`.
 This way you can make quick notes, as you change to other projects or even branches wip will open new files,
 so you don't need to remember where you stored your notes.
+
+To remove the current WIP file from `$HOME/.wip.vim` use:
+
+```vim
+:WIPClean
+```
+
+To remove all WIP files from `$HOME/.wip.vim` use:
+
+```vim
+:WIPCleanAll
+```
