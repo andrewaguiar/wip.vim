@@ -19,8 +19,10 @@ uses another files to it, so the only command you need to run to make your quick
 
 ## Installing
 
-```shell
-git clone git@github.com:andrewaguiar/wip.git && cd wip && ./wip
+```vim
+call plug#begin()
+Plug 'andrewaguiar/wip.vim'
+call plug#end()
 ```
 
 ## Usage
