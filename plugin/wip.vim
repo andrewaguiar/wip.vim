@@ -1,11 +1,11 @@
 function! s:WIPFile() abort
   let l:wip = system("echo \"$(git rev-parse --show-toplevel) @ $(git branch | grep \\* | cut -d ' ' -f2)\" | /usr/bin/md5sum |/bin/cut -f1 -d \" \"")
-  return "~/.wip.vim/" . l:wip
+  return ($HOME . "/.wip.vim/" . l:wip)
 endfunction
 
 function! s:EnsureWIPDirExists() abort
-  if !isdirectory("~/.wip.vim/")
-    call mkdir("~/.wip.vim/", "p")
+  if !isdirectory($HOME . "/.wip.vim/")
+    call mkdir($HOME . "/.wip.vim/", "p")
   endif
 endfunction
 
@@ -34,5 +34,5 @@ command! -bar -nargs=? WIPCleanAll
       \ call s:WIPCleanAll() |
 
 function! s:WIPCleanAll() abort
-  call system("rm -rf ~/.wip.vim/*")
+  call system("rm -rf " . $HOME . "/.wip.vim/*")
 endfunction
