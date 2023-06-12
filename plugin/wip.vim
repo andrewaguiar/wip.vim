@@ -1,6 +1,6 @@
 function! s:WIPFile() abort
-  let l:wip = system("echo \"$(git rev-parse --show-toplevel|tr '\.' '-')--at--$(git branch | grep \\* | cut -d ' ' -f2)\"")
-  return ($HOME . "/.wip.vim/" . l:wip . ".md")
+  let l:wip = system("echo \"$(git rev-parse --show-toplevel|tr '\.' '-')--at--$(git branch | grep \\* | cut -d ' ' -f2).md\"")
+  return ($HOME . "/.wip.vim/" . l:wip)
 endfunction
 
 function! s:EnsureWIPDirExists() abort
