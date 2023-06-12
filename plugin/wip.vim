@@ -1,5 +1,5 @@
 function! s:WIPFile() abort
-  let l:wip = system("echo \"$(git rev-parse --show-toplevel|tr "/" "-"|tr "." "-")--at--$(git branch | grep \\* | cut -d ' ' -f2)\"")
+  let l:wip = system("echo \"$(git rev-parse --show-toplevel) @ $(git branch | grep \\* | cut -d ' ' -f2)\" | /usr/bin/md5sum |/bin/cut -f1 -d \" \"")
   return ($HOME . "/.wip.vim/" . l:wip)
 endfunction
 
