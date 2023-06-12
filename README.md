@@ -8,10 +8,10 @@ documents and always used that file. But as I started working on other branches 
 this files usually became a mess. I started then separate this WIP files by projects and branches.
 
 Wip does the same, but in a automated way, it gets your current project plus your current git branch
-and creates a markdown file based in `CURRENT_PROJECT @ CURRENT_BRANCH` md5 in `$HOME/.wip` folder, like:
+and creates a markdown file based in `CURRENT_PROJECT--at--CURRENT_BRANCH.md` in `$HOME/.wip` folder, like:
 
 ```
-$HOME/.wip/4e46d54966c32d7597e5f5a06c467c7d.md
+$HOME/.wip/project-name--at--branch.md
 ```
 
 If you change projects or branches you don't need to worry about changing files for yourself, wip automatically
